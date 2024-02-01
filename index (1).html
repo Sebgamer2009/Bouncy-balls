@@ -1,0 +1,51 @@
+<html>
+<head>
+<style>
+  .ball {
+    position: absolute;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0% {
+      top: 0;
+      background-color: hsl(0, 100%, 50%);
+    }
+    25% {
+      top: 80%;
+      background-color: hsl(90, 100%, 50%);
+    }
+    50% {
+      top: 0;
+      background-color: hsl(180, 100%, 50%);
+    }
+    75% {
+      top: 80%;
+      background-color: hsl(270, 100%, 50%);
+    }
+    100% {
+      top: 0;
+      background-color: hsl(360, 100%, 50%);
+    }
+  }
+</style>
+</head>
+<body>
+  <div id="container">
+    <!-- This script will generate 100 balls with random positions -->
+    <script>
+      let container = document.getElementById("container");
+      for (let i = 0; i < 100; i++) {
+        let ball = document.createElement("div");
+        ball.className = "ball";
+        ball.style.left = Math.random() * 80 + "%";
+        ball.style.animationDelay = Math.random() * 2 + "s";
+        container.appendChild(ball);
+      }
+    </script>
+  </div>
+</body>
+</html>
